@@ -4,6 +4,8 @@ const recipeSchema = mongoose.Schema({
     recipeName:String,
     content:Array,
     image:String
+},{
+    versionKey:false
 })
 
 

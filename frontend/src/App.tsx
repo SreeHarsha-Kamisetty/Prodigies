@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Carousel from "./components/Carousel";
+// import Recipie from "./components/Recipie";
 
 function App() {
   const [search, setSearch] = useState<string>();
@@ -26,12 +27,17 @@ function App() {
               Search
             </button>
           </div>
+          <div>
+            {}
+          </div>
         </div>
         <div className="w-[75%] min-h-screen border-2 border-black">
           {" "}
           <Carousel />
         </div>
       </div>
+      {/* <h1 className="text-3xl font-bold underline bg-red-300">Hello world!</h1>;
+     <Recipie /> */}
     </>
   );
 }
