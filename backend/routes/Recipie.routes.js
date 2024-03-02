@@ -3,6 +3,7 @@ const { recommendations } = require("../utils/recommendations.utils");
 const {fullRecipe} = require("../utils/completeReciepe.util");
 const {generateImage} = require("../utils/generateImage.utils")
 const RecipeRouter = express.Router();
+const {check}=require('../middleware/check.middleware')
 
 RecipeRouter.get("/recommendation/:items", async (req, res) => {
   try {
@@ -13,7 +14,7 @@ RecipeRouter.get("/recommendation/:items", async (req, res) => {
   } catch (error) {}
 });
 
-RecipeRouter.get("/fullrecipe/:recipe",async(req,res)=>{
+RecipeRouter.get("/fullrecipe/:recipe",check,async(req,res)=>{
     try {
         let {recipe} = req.params;
         let result = await fullRecipe(recipe)
