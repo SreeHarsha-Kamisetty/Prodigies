@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors");
 const { RecipeRouter } = require("./routes/Recipie.routes");
+const { connection } = require("./db");
 
 
 const app = express();
@@ -14,6 +15,13 @@ app.get("/",(req,res)=>{
     res.send("HOME")
 })
 
-app.listen(8080,()=>{
-    console.log(`Server is running at http://localhost:8080`)
+app.listen(8080,async()=>{
+    try {
+        await connection
+        console.log("Connected to DB")
+        console.log(`Server is running at http://localhost:8080`)
+    } catch (error) {
+        console.log(error)
+    }
+    
 })
