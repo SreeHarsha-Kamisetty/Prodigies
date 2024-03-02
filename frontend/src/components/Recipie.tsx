@@ -1,5 +1,5 @@
   
-const Recipie = () => {
+const Recipie = ({}) => {
     return (
       <div className="box-border border-2 border-zinc-950 h-auto md:h-130 w-120">Recipie Information are:
   
@@ -27,7 +27,7 @@ const Recipie = () => {
           </div>
         </div>
   
-        <div id="INS" className="border-2 border-zinc-950 h-auto w-full md:h-25 md:w-full md:order-last">
+        <div id="INS" className="border-2 border-zinc-950 h-auto w-full md:h-30 md:w-full md:order-last">
           <p>In a bowl, mix yogurt, ginger-garlic paste, lemon juice, gram flour, red chili powder,
             turmeric powder, garam masala, chaat masala, crushed kasuri methi, and salt to taste to make the marinade.
             Add paneer cubes to the marinade and coat them well. Let them marinate for at least 30 minutes. Preheat the grill or oven to medium-high heat. Thread marinated paneer cubes onto skewers, alternating with optional onion, bell pepper, and tomato wedges. Brush the skewered paneer and vegetables with oil and grill or bake for 10-15 minutes, turning occasionally, until they are golden brown and slightly charred. Serve hot with mint-coriander chutney or lemon wedges and enjoy your delicious paneer tikka!</p>
