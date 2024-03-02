@@ -12,7 +12,7 @@ const fullRecipe = async(recipe)=>{
             model: 'gpt-3.5-turbo',
           });
           let recipieContent = await chatCompletion.choices[0].message.content
-        //   console.log(recipieContent)
+          console.log(recipieContent)
             return recipieContent
     } catch (error) {
         console.log(error)
