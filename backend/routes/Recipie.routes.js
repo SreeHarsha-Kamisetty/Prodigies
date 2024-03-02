@@ -4,6 +4,7 @@ const {fullRecipe} = require("../utils/completeReciepe.util");
 const {generateImage} = require("../utils/generateImage.utils")
 const RecipeRouter = express.Router();
 const {check}=require('../middleware/check.middleware')
+const {RecipeModel}=require('../models/recipe.model')
 
 RecipeRouter.get("/recommendation/:items", async (req, res) => {
   try {
@@ -20,7 +21,14 @@ RecipeRouter.get("/fullrecipe/:recipe",check,async(req,res)=>{
         let result = await fullRecipe(recipe)
         result = result.split("\n");
         let image = await generateImage(recipe);
-        res.status(200).json({result,image});
+        const obj={
+          recipeName:recipe,
+          content:result,
+          image:image
+        }
+        const recipeObj=new RecipeModel(obj)
+        await recipeObj.save()
+        res.status(200).json(obj);
     } catch (error) {
         console.log(error)
         res.status(400).json({Error:"Error while generating recipe"})
