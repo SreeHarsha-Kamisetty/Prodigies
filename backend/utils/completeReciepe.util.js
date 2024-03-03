@@ -8,7 +8,7 @@ const openai = new OpenAI({
 const fullRecipe = async(recipe)=>{
     try {
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: 'assistant', content: `Generate recipie for ${recipe}. Keep the process step by step along with all the required details` }],
+            messages: [{ role: 'assistant', content: `Generate recipie for ${recipe}. Keep the process step by step along with all the required details. Separate ingridients and Instructions` }],
             model: 'gpt-3.5-turbo',
           });
           let recipieContent = await chatCompletion.choices[0].message.content
