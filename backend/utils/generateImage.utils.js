@@ -11,8 +11,8 @@ const generateImage = async(recipe) =>{
             text: recipe,
             grid_size: "1",
             image_generator_version :"hd",
-            negative_prompt:"blurry",
-            width:"1024",
+            negative_prompt:"animated,blurry,text",
+            width:"768",
             height:"512"
             
         }),
