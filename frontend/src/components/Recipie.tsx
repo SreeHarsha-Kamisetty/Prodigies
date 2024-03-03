@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { loadingTF } from "../redux/loadingSlice";
 
 interface IRecipie {
   recipieNeed: string;
 }
 
 const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
-  const [recipeData, setRecipeData] = useState<any>("");
+  const dispatch = useDispatch();
+  const loading: boolean = useSelector(
+    (state: boolean) => state.loading.loading
+  );
+  const [recipeData, setRecipeData] = useState<string>("");
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -15,7 +21,8 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           `http://localhost:8080/recipes/fullrecipe/${recipieNeed}`
         );
         setRecipeData(res.data);
-        console.log(res.data);
+        dispatch(loadingTF(false));
+        // console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -23,7 +30,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
 
     fetchRecipe();
   }, [recipieNeed]);
-
+  console.log(loading);
   return (
     <div className="box-border border-2 border-white h-auto md:h-130 w-120">
       {recipeData && (
