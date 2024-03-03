@@ -4,6 +4,7 @@ import Carousel from "./components/Carousel";
 // import Recipie from "./components/Recipie";
 import axios from "axios";
 import Recipie from "./components/Recipie";
+import { string } from "prop-types";
 // import { NavLink } from "react-router-dom";
 // import { Link, NavLink } from "react-router-dom";
 // import { string } from "prop-types";
@@ -15,7 +16,9 @@ function App() {
   const [recipieNeed, setRecipieNeed] = useState<string>("");
   const [showRecipie, setShowRecipie] = useState<boolean>(false);
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    // e.preventdefault();
+    e.preventDefault();
     // make the fetch request on the base of the search text
     // setSearch(searchDemo);
     const res = await axios.get(
@@ -33,28 +36,73 @@ function App() {
   };
 
   // console.log(search);
-  // console.log(recommend);
+  console.log(recommend);
   // console.log(showRecipie);
   // console.log(recipieNeed);
 
   return (
-    <>
-      <div className="flex gap-4">
-        <div className="w-[25%] min-h-screen border-2 border-black">
-         <button onClick={() => setShowRecipie(false)}>home</button>
-          <div className="flex  justify-center">
-            <input
+    <div className="bgImg text-white">
+      {/* <div className="overlay"></div> */}
+      <div className="flex gap-4 content">
+        <div className="w-[25%] min-h-screen border-2 border-white">
+          <div className="flex  justify-center text-white w-[100%]">
+            {/* <input
               type="text"
               placeholder="Search..."
-              className="border-2 border-black"
+              className="border-2 border-white bg-transparent"
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
             />
-            <button className="border-2 border-black" onClick={handleSearch}>
+            <button className="border-2 border-white" onClick={handleSearch}>
               Search
-            </button>
+            </button> */}
+            <form className="w-[95%] pt-8 " onSubmit={handleSearch}>
+              {/* <label
+                for="default-search"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >
+                Search
+              </label> */}
+              <div className="relative">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <svg
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search Mockups, Logos..."
+                  // contenteditable="true"
+                  // spellcheck="true"
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
           <div className="flex flex-col gap-2 w-[50%] m-[auto] mt-[2rem]  ">
             {recommend.map((item: string) => {
@@ -62,28 +110,46 @@ function App() {
                 <button
                   onClick={() => recipesSelect(item)}
                   key={item}
-                  className="border-2 border-black"
+                  type="button"
+                  className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
                 >
                   {item}
                 </button>
+                // <button
+                //   onClick={() => recipesSelect(item)}
+                //   key={item}
+                //   className="border-2 border-white"
+                // >
+                //   {item}
+                // </button>
               );
             })}
           </div>
         </div>
-        <div className="w-[75%] min-h-screen border-2 border-black flex items-center">
-          {" "}
-          {showRecipie ? (
-            <Recipie recipieNeed={recipieNeed} />
-          ) : (
-            <div className="w-[90%] m-[auto]">
-              <Carousel />
-            </div>
-          )}
+        <div className="w-[75%] border-2 border-white flex items-center  justify-center flex-col">
+          <div>
+            <button
+              onClick={() => setShowRecipie(false)}
+              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 mt-4"
+            >
+              Home
+            </button>
+          </div>
+          <div className="w-[95%] m-[auto]  mt-7">
+            {" "}
+            {showRecipie ? (
+              <Recipie recipieNeed={recipieNeed} />
+            ) : (
+              <div className="w-[90%] m-[auto]">
+                <Carousel />
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {/* <h1 className="text-3xl font-bold underline bg-red-300">Hello world!</h1>;
      <Recipie /> */}
-    </>
+    </div>
   );
 }
 
