@@ -13,7 +13,9 @@ import { loadingTF } from "./redux/loadingSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const loading:boolean = useSelector((state:boolean) => state.loading.loading);
+  const loading: boolean = useSelector(
+    (state: boolean) => state.loading.loading
+  );
   const [search, setSearch] = useState<string>();
   // const [searchDemo, setSearchDemo] = useState<string>("");
   const [recommend, setRecommend] = useState([]);
@@ -38,12 +40,12 @@ function App() {
   const recipesSelect = (item: string) => {
     setRecipieNeed(item);
     setShowRecipie(true);
-    
-    dispatch(loadingTF(true))
+
+    dispatch(loadingTF(true));
   };
 
   // console.log(search);
-  console.log(recommend);
+  // console.log(recommend);
   // console.log(showRecipie);
   // console.log(recipieNeed);
 
