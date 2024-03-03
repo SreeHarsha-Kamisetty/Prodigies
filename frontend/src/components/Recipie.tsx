@@ -12,7 +12,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   const loading: boolean = useSelector(
     (state: boolean) => state.loading.loading
   );
-  const [recipeData, setRecipeData] = useState<string>("");
+  const [recipeData, setRecipeData] = useState<any>("");
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -22,7 +22,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
         );
         setRecipeData(res.data);
         dispatch(loadingTF(false));
-        // console.log(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -32,8 +32,13 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   }, [recipieNeed]);
   console.log(loading);
   return (
-    <div className="box-border border-2 border-white h-auto md:h-130 w-120">
-      {recipeData && (
+    <div className="box-border border-2 border-zinc-950 h-auto md:h-130 w-120">
+      {loading ? (
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5f206f6129d07620b232ae99/1597595492519-I3MYM5X0Z7Y9QDEFY467/baking+cake.gif"
+          alt="Loading..."
+        />
+      ) : (
         <>
           <div className="w-[98%] m-auto mb-2 sm:text-center text-[1.7rem]">
             Recipie Information: {recipeData.recipeName}
@@ -58,10 +63,10 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
                 <ul>
                   {recipeData.content.map((step: string, index: number) => {
                     if (step === "Ingredients:") {
-                      return null; // Skip the "Ingredients:" line
+                      return null;
                     }
                     if (step.startsWith("- ")) {
-                      return <li key={index}>{step.substring(2)}</li>; // Remove the leading "-" character
+                      return <li key={index}>{step.substring(2)}</li>;
                     }
                     return null;
                   })}
