@@ -3,7 +3,7 @@ import { Carousel as FlowbiteCarousel } from "flowbite-react";
 
 const Carousel = () => {
   return (
-    <div className="h-58 sm:h-64 xl:h-80 2xl:h-[35rem] object-cover ">
+    <div className=" sm:h-64 lg:h-[35rem] ">
       <FlowbiteCarousel>
         <img
           src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"

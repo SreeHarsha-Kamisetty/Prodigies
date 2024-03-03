@@ -11,7 +11,9 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/recipes/fullrecipe/${recipieNeed}`);
+        const res = await axios.get(
+          `http://localhost:8080/recipes/fullrecipe/${recipieNeed}`
+        );
         setRecipeData(res.data);
         console.log(res.data);
       } catch (error) {
@@ -27,11 +29,24 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
       {recipeData && (
         <>
           <div>Recipie Information:{recipeData.recipeName}</div>
-          <div id="IMIG" className="flex flex-col md:flex-row h-50 md:h-90 w-full md:w-full">
-            <div id="IM" className="box-border h-50 md:w-1/2 border-2 border-zinc-950">
-              <img src={recipeData.image} alt={recipeData.recipeName} className="w-full h-full object-cover" />
+          <div
+            id="IMIG"
+            className="flex flex-col md:flex-row h-50 md:h-90 w-full md:w-full"
+          >
+            <div
+              id="IM"
+              className="box-border  md:w-1/2 border-2 border-zinc-950"
+            >
+              <img
+                src={recipeData.image}
+                alt={recipeData.recipeName}
+                className="w-[50%] m-auto "
+              />
             </div>
-            <div id="IG" className="border-2 border-zinc-950 h-50 md:w-1/2 md:order-first">
+            <div
+              id="IG"
+              className="border-2 border-zinc-950 h-50 md:w-1/2 md:order-first"
+            >
               <div>
                 <h2>Ingredients:</h2>
                 <ul>
@@ -48,13 +63,16 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
               </div>
             </div>
           </div>
-          <div id="INS" className="border-2 border-zinc-950 h-auto w-full md:h-30 md:w-full md:order-last">
+          <div
+            id="INS"
+            className="border-2 border-zinc-950 h-auto w-full md:h-30 md:w-full md:order-last"
+          >
             <div>
               <h2>Instructions:</h2>
               <ol>
                 {recipeData.content.map((step: string, index: number) => {
                   if (step === "Instructions:") {
-                    return null; 
+                    return null;
                   }
                   if (!step.startsWith("- ") && !step.startsWith("Ing")) {
                     return <li key={index}>{step}</li>;

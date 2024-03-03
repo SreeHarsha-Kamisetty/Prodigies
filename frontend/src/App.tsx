@@ -4,7 +4,7 @@ import Carousel from "./components/Carousel";
 // import Recipie from "./components/Recipie";
 import axios from "axios";
 import Recipie from "./components/Recipie";
-import { string } from "prop-types";
+
 // import { NavLink } from "react-router-dom";
 // import { Link, NavLink } from "react-router-dom";
 // import { string } from "prop-types";
@@ -16,7 +16,7 @@ function App() {
   const [recipieNeed, setRecipieNeed] = useState<string>("");
   const [showRecipie, setShowRecipie] = useState<boolean>(false);
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (e: any) => {
     // e.preventdefault();
     e.preventDefault();
     // make the fetch request on the base of the search text
@@ -40,31 +40,18 @@ function App() {
   // console.log(showRecipie);
   // console.log(recipieNeed);
 
+  //     sm: "30em",
+  //     md: "48em",
+  //     lg: "62em",
+  //     xl: "80em",
+  //     "2xl": "96em",
+
   return (
-    <div className="bgImg text-white">
-      {/* <div className="overlay"></div> */}
-      <div className="flex gap-4 content">
-        <div className="w-[25%] min-h-screen border-2 border-white">
+    <div className="bg-black text-white">
+      <div className="flex md:flex-row sm:flex-col gap-4 content min-h-screen">
+        <div className="w-[25%] sm:w-[100%]  border-2 border-white">
           <div className="flex  justify-center text-white w-[100%]">
-            {/* <input
-              type="text"
-              placeholder="Search..."
-              className="border-2 border-white bg-transparent"
-              value={search}
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
-            <button className="border-2 border-white" onClick={handleSearch}>
-              Search
-            </button> */}
             <form className="w-[95%] pt-8 " onSubmit={handleSearch}>
-              {/* <label
-                for="default-search"
-                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-              >
-                Search
-              </label> */}
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
@@ -88,8 +75,6 @@ function App() {
                   id="default-search"
                   className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search Mockups, Logos..."
-                  // contenteditable="true"
-                  // spellcheck="true"
                   value={search}
                   onChange={(e) => {
                     setSearch(e.target.value);
@@ -104,7 +89,7 @@ function App() {
               </div>
             </form>
           </div>
-          <div className="flex flex-col gap-2 w-[50%] m-[auto] mt-[2rem]  ">
+          <div className="flex flex-col gap-2 w-[50%] m-[auto] mt-[2rem] sm:pb-3  ">
             {recommend.map((item: string) => {
               return (
                 <button
@@ -115,18 +100,11 @@ function App() {
                 >
                   {item}
                 </button>
-                // <button
-                //   onClick={() => recipesSelect(item)}
-                //   key={item}
-                //   className="border-2 border-white"
-                // >
-                //   {item}
-                // </button>
               );
             })}
           </div>
         </div>
-        <div className="w-[75%] border-2 border-white flex items-center  justify-center flex-col">
+        <div className=" w-[75%] sm:w-[100%]  border-2 border-white flex items-center  justify-center flex-col sm:pb-6">
           <div>
             <button
               onClick={() => setShowRecipie(false)}
@@ -135,7 +113,7 @@ function App() {
               Home
             </button>
           </div>
-          <div className="w-[95%] m-[auto]  mt-7">
+          <div className="w-[95%] m-[auto]  mt-5">
             {" "}
             {showRecipie ? (
               <Recipie recipieNeed={recipieNeed} />
@@ -147,8 +125,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <h1 className="text-3xl font-bold underline bg-red-300">Hello world!</h1>;
-     <Recipie /> */}
     </div>
   );
 }
