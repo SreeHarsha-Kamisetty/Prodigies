@@ -35,8 +35,8 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
     <div className="box-border border-2 border-white h-auto md:h-130 w-120">
       {recipeData && (
         <>
-          <div className="w-[98%] m-auto mb-2 sm:text-center">
-            Recipie Information:{recipeData.recipeName}
+          <div className="w-[98%] m-auto mb-2 sm:text-center text-[1.7rem]">
+            Recipie Information: {recipeData.recipeName}
           </div>
           <div
             id="IMIG"
@@ -53,8 +53,8 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
               />
             </div>
             <div id="IG" className="border-2 border-white h-auto lg:w-[70%] ">
-              <div>
-                <h2>Ingredients:</h2>
+              <div className="pl-[1rem] pt-2">
+                <h2 className="text-[1.5rem]">Ingredients:</h2>
                 <ul>
                   {recipeData.content.map((step: string, index: number) => {
                     if (step === "Ingredients:") {
@@ -71,10 +71,11 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           </div>
           <div
             id="INS"
-            className="border-2 border-white h-auto lg:w-[98%] md:h-30 md:w-full md:order-last lg:m-auto"
+            className="border-2 border-white h-auto lg:w-[98%] md:h-30 md:w-full md:order-last lg:m-auto pl-[1rem] pt-2 pb-3
+            "
           >
             <div>
-              <h2>Instructions:</h2>
+              <h2 className="text-[1.5rem]">Instructions:</h2>
               <ol>
                 {recipeData.content.map((step: string, index: number) => {
                   if (step === "Instructions:") {
