@@ -1,5 +1,8 @@
-  
-const Recipie = ({}) => {
+  interface IRecipie {
+    recipieNeed: string;
+  }
+const Recipie: React.FC<IRecipie> = ({recipieNeed}) => {
+    console.log(recipieNeed)
     return (
       <div className="box-border border-2 border-zinc-950 h-auto md:h-130 w-120">Recipie Information are:
   
