@@ -25,28 +25,27 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   }, [recipieNeed]);
 
   return (
-    <div className="box-border border-2 border-zinc-950 h-auto md:h-130 w-120">
+    <div className="box-border border-2 border-white h-auto md:h-130 w-120">
       {recipeData && (
         <>
-          <div>Recipie Information:{recipeData.recipeName}</div>
+          <div className="w-[98%] m-auto mb-2 sm:text-center">
+            Recipie Information:{recipeData.recipeName}
+          </div>
           <div
             id="IMIG"
-            className="flex flex-col md:flex-row h-50 md:h-90 w-full md:w-full"
+            className="flex lg:flex-row-reverse h-auto lg:w-[98%] m-auto gap-2 mb-2 sm:flex-col"
           >
             <div
               id="IM"
-              className="box-border  md:w-1/2 border-2 border-zinc-950"
+              className="box-border sm:w-[50%] sm:m-auto lg:w-[30%] border-2 border-white"
             >
               <img
                 src={recipeData.image}
                 alt={recipeData.recipeName}
-                className="w-[50%] m-auto "
+                className=" m-auto "
               />
             </div>
-            <div
-              id="IG"
-              className="border-2 border-zinc-950 h-50 md:w-1/2 md:order-first"
-            >
+            <div id="IG" className="border-2 border-white h-auto lg:w-[70%] ">
               <div>
                 <h2>Ingredients:</h2>
                 <ul>
@@ -65,7 +64,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           </div>
           <div
             id="INS"
-            className="border-2 border-zinc-950 h-auto w-full md:h-30 md:w-full md:order-last"
+            className="border-2 border-white h-auto lg:w-[98%] md:h-30 md:w-full md:order-last lg:m-auto"
           >
             <div>
               <h2>Instructions:</h2>
