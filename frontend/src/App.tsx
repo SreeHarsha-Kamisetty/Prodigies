@@ -73,7 +73,7 @@ function App() {
         <div className="w-[75%] min-h-screen border-2 border-black flex items-center">
           {" "}
           {showRecipie ? (
-            <Recipie recipieNeed={recipieNeed} />
+            <Recipie recipieNeed={recipieNeed} /> 
           ) : (
             <div className="w-[90%] m-[auto]">
               <Carousel />
