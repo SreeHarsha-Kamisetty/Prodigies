@@ -1,9 +1,8 @@
-import React from "react";
 import { Carousel as FlowbiteCarousel } from "flowbite-react";
 
 const Carousel = () => {
   return (
-    <div className=" sm:h-64 lg:h-[35rem] shadowImg">
+    <div className=" sm:h-64 lg:h-[30rem] shadowImg object-cover">
       <FlowbiteCarousel>
         <img
           src="https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

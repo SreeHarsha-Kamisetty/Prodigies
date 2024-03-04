@@ -6,6 +6,8 @@ import axios from "axios";
 import Recipie from "./components/Recipie";
 import { useDispatch, useSelector } from "react-redux";
 import { loadingTF } from "./redux/loadingSlice";
+import { RootState } from "./redux/store";
+import { FormEvent } from "react";
 
 // import { NavLink } from "react-router-dom";
 // import { Link, NavLink } from "react-router-dom";
@@ -14,7 +16,7 @@ import { loadingTF } from "./redux/loadingSlice";
 function App() {
   const dispatch = useDispatch();
   const loading: boolean = useSelector(
-    (state: boolean) => state.loading.loading
+    (state: RootState) => state.loading.loading
   );
   const [search, setSearch] = useState<string>();
   // const [searchDemo, setSearchDemo] = useState<string>("");
@@ -22,14 +24,14 @@ function App() {
   const [recipieNeed, setRecipieNeed] = useState<string>("");
   const [showRecipie, setShowRecipie] = useState<boolean>(false);
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
     // e.preventdefault();
     e.preventDefault();
     // make the fetch request on the base of the search text
     // setSearch(searchDemo);
 
     const res = await axios.get(
-      `http://localhost:8080/recipes/recommendation/${search}`
+      `https://prodigies.onrender.com/recipes/recommendation/${search}`
     );
     setRecommend(res.data.result);
     // console.log(res.data.result);
@@ -44,7 +46,7 @@ function App() {
     dispatch(loadingTF(true));
   };
 
-  // console.log(search);
+  console.log(loading);
   // console.log(recommend);
   // console.log(showRecipie);
   // console.log(recipieNeed);
@@ -52,9 +54,17 @@ function App() {
   return (
     <div className="bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-white">
       <div className="flex md:flex-row sm:flex-col gap-4 content min-h-screen">
-        <div className="w-[25%] sm:w-[100%]  border-2 border-white">
+        <div className="w-[25%] sm:w-[100%]  border-2 border-white sm:border-none ">
+          <div className="mt-4  text-center">
+            <button
+              onClick={() => setShowRecipie(false)}
+              className="shadows py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Home
+            </button>
+          </div>
           <div className="flex  justify-center text-white w-[100%]">
-            <form className="w-[95%] pt-8 " onSubmit={handleSearch}>
+            <form className="w-[95%] pt-4 " onSubmit={handleSearch}>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
@@ -107,21 +117,13 @@ function App() {
             })}
           </div>
         </div>
-        <div className=" w-[75%] sm:w-[100%]  border-2 border-white flex items-center  justify-center flex-col sm:pb-6 pb-3">
-          <div className="mt-4">
-            <button
-              onClick={() => setShowRecipie(false)}
-              className="shadows py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            >
-              Home
-            </button>
-          </div>
-          <div className="w-[95%] m-[auto]  mt-4">
+        <div className=" w-[75%] sm:w-[100%]  border-2 border-white sm:pb-6 pb-3 sm:border-none">
+          <div className="w-[95%] m-[auto]  mt-7 flex justify-center items-center ">
             {" "}
             {showRecipie ? (
               <Recipie recipieNeed={recipieNeed} />
             ) : (
-              <div className="w-[90%] m-[auto]">
+              <div className="w-[90%] m-[auto] lg:mt-10  ">
                 <Carousel />
               </div>
             )}

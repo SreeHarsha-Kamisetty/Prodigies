@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { loadingTF } from "../redux/loadingSlice";
+import { RootState } from "../redux/store";
+
 
 interface IRecipie {
   recipieNeed: string;
@@ -10,7 +12,7 @@ interface IRecipie {
 const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   const dispatch = useDispatch();
   const loading: boolean = useSelector(
-    (state: boolean) => state.loading.loading
+    (state: RootState) => state.loading.loading
   );
   // const loading = true;
   const [recipeData, setRecipeData] = useState<any>("");
@@ -19,7 +21,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
     const fetchRecipe = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/recipes/fullrecipe/${recipieNeed}`
+          `https://prodigies.onrender.com/recipes/fullrecipe/${recipieNeed}`
         );
         setRecipeData(res.data);
         dispatch(loadingTF(false));
@@ -35,7 +37,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   return (
     <div className="box-border  h-auto md:h-130 w-120 pb-3 ">
       {loading ? (
-        <div className="flex justify-center shadowImg">
+        <div className="flex justify-center shadowImg mt-7">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5f206f6129d07620b232ae99/1597595492519-I3MYM5X0Z7Y9QDEFY467/baking+cake.gif"
             alt="Loading..."
@@ -48,7 +50,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           </div>
           <div
             id="IMIG"
-            className="flex lg:flex-row-reverse h-auto lg:w-[98%] m-auto gap-2 mb-2 sm:flex-col items-center justify-center lg:justify-between mb-7 lg:mt-4"
+            className="flex lg:flex-row-reverse h-auto lg:w-[98%] m-auto gap-2 mb-2 sm:flex-col lg:justify-between mb-7 lg:mt-4"
           >
             <div
               id="IM"
