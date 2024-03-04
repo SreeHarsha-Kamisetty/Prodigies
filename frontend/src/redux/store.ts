@@ -1,8 +1,15 @@
+// store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import loadingSlice from "./loadingSlice";
+import loadingReducer, { LoadingState } from "./loadingSlice";
 
+// Define the root state type
+export interface RootState {
+  loading: LoadingState;
+}
+
+// Create the Redux store
 export const store = configureStore({
   reducer: {
-    loading: loadingSlice,
+    loading: loadingReducer,
   },
 });
