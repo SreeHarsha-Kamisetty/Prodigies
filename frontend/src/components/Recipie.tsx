@@ -16,6 +16,8 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   // const loading = true;
   const [recipeData, setRecipeData] = useState<any>("");
 
+  
+
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
