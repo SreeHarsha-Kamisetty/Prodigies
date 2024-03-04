@@ -21,10 +21,14 @@ RecipeRouter.get("/fullrecipe/:recipe",check,async(req,res)=>{
         let result = await fullRecipe(recipe)
         result = result.split("\n");
         let image = await generateImage(recipe);
+        const expirationTime = new Date();
+expirationTime.setHours(expirationTime.getHours() + 1);
         const obj={
           recipeName:recipe,
           content:result,
-          image:image
+          image:image,
+          createdAt: new Date(),
+          expireAt: expirationTime,
         }
         const recipeObj=new RecipeModel(obj)
         await recipeObj.save()
