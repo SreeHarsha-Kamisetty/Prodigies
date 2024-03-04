@@ -14,7 +14,7 @@ Fullstack
 ## Directory Structure
 
 .
-├── backend/
+├── backend/ \n
 │   ├── middleware
 │   ├── models
 │   ├── routes
@@ -45,6 +45,7 @@ Fullstack
 │   ├── tsconfig.node.json
 │   └── vite.config.ts
 └── README.md
+
 
       
 
