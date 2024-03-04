@@ -12,10 +12,39 @@ Fullstack
 
 
 ## Directory Structure
-my-app/
+
 ├─ backend/
+      |-- middleware
+      |-- models
+      |-- routes
+      |-- utils
+      .gitignore
+      db.js
+      index.js
+      package.json
 ├─ frontend/
-│  ├─ ...
+│  ├─ public
+    |- src
+      |-- assests
+      |-- components
+      |-- redux
+    App.css
+    App.tsx
+    index.css
+    main.tsx
+    vite-env.d.ts
+  .eslintrc.cjs
+  .gitignore
+  README.md
+  index.html
+  package.json
+  postcss.configs.js
+  taliwing.config.js
+  tsconfig.json
+  tsconfig.node.json
+  vite.config.ts
+README.md
+      
 
 ## Video Walkthrough of the project
 
