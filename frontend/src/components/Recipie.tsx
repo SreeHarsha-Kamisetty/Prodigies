@@ -16,8 +16,6 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   // const loading = true;
   const [recipeData, setRecipeData] = useState<any>("");
 
-  
-
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
@@ -56,7 +54,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           >
             <div
               id="IM"
-              className="box-border sm:w-[100%] sm:m-auto lg:w-[30rem]  sm:mb-8 rounded-xl"
+              className="box-border sm:w-[100%] sm:m-auto lg:w-[30rem]  sm:mb-8 rounded-xl flex justify-center"
             >
               <img
                 src={recipeData.image}
