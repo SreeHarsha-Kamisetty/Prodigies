@@ -43,8 +43,8 @@ Include screenshots as necessary.
 
 
 ## APIs Used
-OpenAI API: Harnessing the power of natural language processing for recipe recommendations.
-DeepAI API: Generating visually appealing images for each recipe.
+- OpenAI API: Harnessing the power of natural language processing for recipe recommendations.
+- DeepAI API: Generating visually appealing images for each recipe.
 
 ## API Endpoints
 
@@ -54,14 +54,14 @@ DeepAI API: Generating visually appealing images for each recipe.
 
 - Frontend:
 
-ReactJS: Building a dynamic and responsive user interface.
-TypeScript: Enhancing code quality and developer productivity.
-Tailwind CSS: Streamlining styling with a utility-first approach.
+  - ReactJS: Building a dynamic and responsive user interface.
+  - TypeScript: Enhancing code quality and developer productivity.
+  - Tailwind CSS: Streamlining styling with a utility-first approach.
 
 - Backend:
 
-NodeJS: Fast and scalable server-side development.
-ExpressJS: Creating robust and modular APIs.
-MongoDB: NoSQL database for efficient data storage.
+  - NodeJS: Fast and scalable server-side development.
+  - ExpressJS: Creating robust and modular APIs.
+  - MongoDB: NoSQL database for efficient data storage.
 
 
