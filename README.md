@@ -6,7 +6,7 @@ This project is a single-page web application built with cutting-edge technologi
 ## Project Type
 Fullstack
 
-## Deplolyed App
+## Deplolyed Links
 - Frontend: https://chef-bot-six.vercel.app/
 - Backend: https://prodigies.onrender.com
 
@@ -18,9 +18,6 @@ my-app/
 │  ├─ ...
 
 ## Video Walkthrough of the project
-
-
-
 
 
 https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/1d6d8a99-7bf2-4f5a-8a8c-102c048bb233
@@ -47,7 +44,13 @@ Automatically generated images for each recipe to provide visual appeal and cont
 
 
 
-Include screenshots as necessary.
+![image](https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/43871c40-ea78-42a7-9035-105e54518a86)
+![image](https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/3a433bde-2ae8-4dab-b438-8f8f40e5159b)
+![image](https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/039f4f97-bcfa-4500-8e17-f2bf1e827322)
+![image](https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/8b454a7e-ced1-4ae2-8c81-77a5880f57dc)
+
+
+
 
 
 ## APIs Used
@@ -55,7 +58,8 @@ Include screenshots as necessary.
 - DeepAI API: Generating visually appealing images for each recipe.
 
 ## API Endpoints
-
+- GET /reommendation/:items
+- GET /fullrecipe/:recipe
 
 
 ## Technology Stack
@@ -71,5 +75,9 @@ Include screenshots as necessary.
   - NodeJS: Fast and scalable server-side development.
   - ExpressJS: Creating robust and modular APIs.
   - MongoDB: NoSQL database for efficient data storage.
-
+## Team 
+  - Sree Harsha Kamisetty
+  - Geetesh Mehuria
+  - Praveen Kumar R
+  - Mohd Khalid
 
