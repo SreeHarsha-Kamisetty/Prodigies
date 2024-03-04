@@ -14,9 +14,12 @@ Fullstack
 ## Directory Structure
 
 .
-├── backend/ \n
+├── backend/ 
+
 │   ├── middleware
+
 │   ├── models
+
 │   ├── routes
 │   ├── utils
 │   ├── .gitignore
