@@ -36,10 +36,11 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   return (
     <div className="box-border  h-auto md:h-130 w-[100%] pb-3 ">
       {loading ? (
-        <div className="flex justify-center shadowImg mt-7">
+        <div className="flex justify-center shadowImg mt-7 rounded-xl">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5f206f6129d07620b232ae99/1597595492519-I3MYM5X0Z7Y9QDEFY467/baking+cake.gif"
             alt="Loading..."
+            className="rounded-xl"
           />
         </div>
       ) : (
@@ -49,21 +50,21 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           </div>
           <div
             id="IMIG"
-            className="flex lg:flex-row-reverse h-auto lg:w-[98%] m-auto gap-2 mb-2 sm:flex-col lg:justify-between mb-7 lg:mt-4"
+            className="flex lg:flex-row-reverse h-auto lg:w-[98%] m-auto gap-2 mb-2 sm:flex-col lg:justify-between mb-7 lg:mt-4 rounded-xl"
           >
             <div
               id="IM"
-              className="box-border sm:w-[100%] sm:m-auto lg:w-[30rem]  sm:mb-8 "
+              className="box-border sm:w-[100%] sm:m-auto lg:w-[30rem]  sm:mb-8 rounded-xl"
             >
               <img
                 src={recipeData.image}
                 alt={recipeData.recipeName}
-                className=" m-auto shadowImg"
+                className=" m-auto shadowImg rounded-xl"
               />
             </div>
             <div
               id="IG"
-              className="shadows h-auto lg:w-[50%]  pb-3 sm:mb-3 sm:w-[100%]"
+              className="shadows rounded-xl h-auto lg:w-[50%]  pb-3 sm:mb-3 sm:w-[100%]"
             >
               <div className="pl-[1rem] pt-2">
                 <h2 className="text-[1.6rem]">Ingredients:</h2>
@@ -84,7 +85,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
           {/* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; */}
           <div
             id="INS"
-            className="shadows h-auto lg:w-[98%] md:h-30 md:w-full md:order-last lg:m-auto pl-[1rem] pt-2 pb-3 mt-3 md:mt-0"
+            className="shadows rounded-xl h-auto lg:w-[98%] md:h-30 md:w-full md:order-last lg:m-auto pl-[1rem] pt-2 pb-3 mt-3 md:mt-0"
           >
             <div>
               <h2 className="text-[1.6rem]">Instructions:</h2>
