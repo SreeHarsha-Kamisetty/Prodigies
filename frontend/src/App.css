@@ -1,3 +1,11 @@
+.shadowImg {
+    filter: drop-shadow(0 0 0.55rem white)
+}
+
+.shadows {
+    box-shadow: rgba(0, 91, 131, 0.12) 0px 2px 4px 0px, rgba(245, 244, 244, 0.32) 0px 2px 16px 0px;
+}
+
 html {
     scroll-behavior: smooth;
 }
