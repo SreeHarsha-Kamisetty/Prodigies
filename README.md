@@ -18,7 +18,11 @@ my-app/
 │  ├─ ...
 
 ## Video Walkthrough of the project
-Attach a very short video walkthough of all of the features [ 1 - 3 minutes ]
+
+
+https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/c4dd97cb-46d5-46bb-b9cf-f89ca152d7e0
+
+
 
 
 ## Features
