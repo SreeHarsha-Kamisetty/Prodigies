@@ -20,7 +20,11 @@ my-app/
 ## Video Walkthrough of the project
 
 
-https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/c4dd97cb-46d5-46bb-b9cf-f89ca152d7e0
+
+
+
+https://github.com/SreeHarsha-Kamisetty/Prodigies/assets/146928943/1d6d8a99-7bf2-4f5a-8a8c-102c048bb233
+
 
 
 
