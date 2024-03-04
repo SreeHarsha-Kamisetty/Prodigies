@@ -7,8 +7,8 @@ This project is a single-page web application built with cutting-edge technologi
 Fullstack
 
 ## Deplolyed App
-Frontend: https://chef-bot-six.vercel.app/
-Backend: https://prodigies.onrender.com
+- Frontend: https://chef-bot-six.vercel.app/
+- Backend: https://prodigies.onrender.com
 
 
 ## Directory Structure
