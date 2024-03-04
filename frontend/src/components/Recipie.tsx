@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadingTF } from "../redux/loadingSlice";
 import { RootState } from "../redux/store";
 
-
 interface IRecipie {
   recipieNeed: string;
 }
@@ -35,7 +34,7 @@ const Recipie: React.FC<IRecipie> = ({ recipieNeed }) => {
   }, [recipieNeed]);
   console.log(loading);
   return (
-    <div className="box-border  h-auto md:h-130 w-120 pb-3 ">
+    <div className="box-border  h-auto md:h-130 w-[100%] pb-3 ">
       {loading ? (
         <div className="flex justify-center shadowImg mt-7">
           <img
