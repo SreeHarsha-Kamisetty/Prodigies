@@ -18,7 +18,6 @@ const recommendations = async(items)=> {
   }
 
 
-
 module.exports = {
   recommendations,
 };
